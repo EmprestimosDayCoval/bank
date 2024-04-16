@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DaycovalAnálise</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #1d273b;
+            font-weight: 300;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .contenedor1 {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            padding: 60px 0;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        /* Header */
+        header::before {
+            content: "";
+            display: block;
+            margin-bottom: 80px;
+        }
+
+        nav {
+            width: 100%;
+            height: 80px;
+            background: #fff;
+            border-bottom: 1px solid transparent;
+            box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2);
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            transition: ease-in-out 0.5s;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            width: 100%;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .nav .logo {
+            height: 80px;
+
+        }
+
+        .nav .logo img {
+            height: 100%;
+            vertical-align: top;
+        }
+
+        .enlaces-header {
+            font-weight: 300;
+            transition: ease-in-out 0.5s;
+        }
+
+        .nav .enlaces-header a {
+            color: #5D6678;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hamburguer {
+            width: 80px;
+            height: 80px;
+            display: none;
+            text-align: center;
+            z-index: 100;
+            cursor: pointer;
+            transition: color 0.5s ease-in;
+        }
+
+        .hamburguer>i {
+            font-size: 25px;
+            line-height: 80px;
+        }
+
+        .contenido-header {
+            width: 100%;
+            height: 600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contenido-header>img {
+            width: auto; /* Define a largura para ajustar automaticamente */
+            height: 400px; /* Define uma altura fixa para a imagem */
+            max-width: 100%; /* Garante que a largura não ultrapasse o contêiner pai */
+        }
+
+        @keyframes animat {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .textos-header {
+            margin: 0 0 0 30px;
+        }
+
+        .contenido-header p {
+            font-weight: 100;
+            margin-top: 14px;
+            color: #5D6678;
+        }
+
+        .contenido-header a {
+            margin: 28px 0 0 0;
+            width: 130px;
+            display: inline-block;
+            background: #032175;
+            text-align: center;
+            color: #fff;
+            padding: 12px 0;
+            text-decoration: none;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 14px;
+            border-radius: 5px;
+            box-shadow: 0 8px 32px rgba(31, 222, 130, .46);
+        }
+
+        .titulo {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <section class="contenedor nav">
+                <div class="logo">
+                    <img src="img/logo-jordan-alexander.png" alt="">
+                </div>
+                <div class="enlaces-header">
+
+                </div>
+                <div class="hamburguer">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </section>
+        </nav>
+        <div class="contenedor">
+            <section class="contenido-header">
+                <section class="textos-header">
+                    <h1>Parabéns! Sua empresa foi aprovada para receber crédito conosco.
+                        Estamos felizes em poder apoiar o crescimento e o sucesso do seu negócio.
+                        VALOR PRÉ APROVADO 80.000,00
+                    </h1>
+                    <p>Cadastre sua Chave Pix</p>
+                    <a href="#" id="cadastrarLink">Solicitar Saque</a>
+                </section>
+                <img src="img/atendimento.jpg" alt="">
+            </section>
+        </div>
+    </header>
+
+    <script>
+        // Função para exibir o alerta quando o link for clicado
+        function exibirAlerta() {
+            alert("Documentação Pendente, Fale com seu Atendente");
+        }
+
+        // Adiciona um evento de clique ao link "Cadastrar"
+        document.getElementById("cadastrarLink").addEventListener("click", function(event) {
+            // Impede o comportamento padrão do link (navegar para outra página)
+            event.preventDefault();
+            // Chama a função para exibir o alerta
+            exibirAlerta();
+        });
+    </script>
+</body>
+
+</html>

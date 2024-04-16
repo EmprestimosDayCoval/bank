@@ -1,0 +1,1853 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <!-- Google Tag Manager --> 
+	<script async="" src="js/gtm.js"></script><script crossorigin="">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PT5DCV4');</script>
+	<!-- End Google Tag Manager -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description"><meta name="title"><meta name="format-detection" content="telephone=no"><title>
+	Dayconnect - Banco Daycoval
+</title><link rel="shortcut icon" href="images/favicon.png">
+
+    <script>
+
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf('MSIE ');
+        var trident = ua.indexOf('Trident/');
+        if (msie > 0) {
+            // IE 10 or older => return version number
+            window.navigate("NavegadorIncompativel.aspx");
+        }
+        else
+            if (trident > 0) {
+                // IE 11 => return version number
+                window.navigate("NavegadorIncompativel.aspx");
+            }
+
+
+        
+
+
+    </script>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/muli.css" rel="stylesheet" type="text/css">
+    <link href="css/material-icons.css" rel="stylesheet">
+    <link href="css/footer-login_1.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/material-icons_1.css" rel="stylesheet"><link href="css/stylelogin.css" rel="stylesheet"><link href="css/login.css" rel="stylesheet"><link href="css/header-login.css" rel="stylesheet"><link href="css/footer-login.css" rel="stylesheet"><link href="css/authenty.css" rel="stylesheet" type="text/css"><link href="css/animation.css" rel="stylesheet" type="text/css">
+
+    <!-- Iconfonts CSS -->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css"><link href="css/glyphicons.css" rel="stylesheet" type="text/css"><link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Core Js -->
+    
+        <script src="js/jquery-3.7.0.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <script src="js/bootstrapv4.min.js" type="text/javascript"></script>
+        <script src="js/popper.min.js" type="text/javascript"></script>
+        <script src="js/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+        <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="js/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+        <script src="js/moment.js" type="text/javascript"></script>
+        <script src="js/jquery.touch-punch.min.js" type="text/javascript"></script>
+        <script src="js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap-datepicker-pt-BR.js" type="text/javascript"></script>
+        <script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="js/jquery.mask.min.js" type="text/javascript"></script>
+        <script src="js/jquery.alphanumeric.js" type="text/javascript"></script>
+        <script src="js/jquery.daycoval.dialog.master.js" type="text/javascript"></script>
+        <script src="js/icheck.min.js" type="text/javascript"></script>
+
+        <script src="js/ngc-182-blk-fnch-grrnd.js" type="text/javascript"></script>
+        <script src="js/pls44-yllwcrd-lkdn-cllfdt.js" type="text/javascript"></script>
+        <script src="js/pls50-xxllkdn-cllfdt.js" type="text/javascript"></script>
+        <script src="js/pkwl32-tbha-dak-2.js" type="text/javascript"></script>
+
+        <script src="js/gerenciamentoTecladoToken.js"></script>
+    
+
+        
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var appIdLogin = $('[id$=HdfAppId]').val();
+            var keys = Object.keys(localStorage);
+
+            for (var i = 0; i < keys.length; i++) {
+
+                if (keys[i].toLowerCase().indexOf(appIdLogin) !== -1) { //5cc082b558accc0010f3ba05
+                    localStorage.removeItem(keys[i]);
+                }
+            }
+        });
+
+        function bgEmpresaAtivar() {
+            $('#IdBgDegrade').removeClass('bg-login-pf').removeClass('bg-login-cartao').addClass('bg-login-pj');
+            $('#IdBgImgDegrade').removeClass('bg-img-login-pf').removeClass('bg-img-login-cartao').addClass('bg-img-login-pj');
+            $('[id$=boxAreaAlerta').removeClass('boxAreaAlertaCartao').addClass("boxAreaAlerta");
+            //$('#LogoDayConnectEmpresa').show();
+            //$('#LogoDayConnect').hide();
+        }
+
+        function bgClienteAtivar() {
+            $('#IdBgDegrade').removeClass('bg-login-pj').removeClass('bg-login-cartao').addClass('bg-login-pf');
+            $('#IdBgImgDegrade').removeClass('bg-img-login-pj').removeClass('bg-img-login-cartao').addClass('bg-img-login-pf');
+            $('[id$=boxAreaAlerta').removeClass('boxAreaAlertaCartao').addClass("boxAreaAlerta");
+            //$('#LogoDayConnect').show();
+            //$('#LogoDayConnectEmpresa').hide();
+        }
+
+        function bgCartaoAtivar() {
+            $('#IdBgDegrade').removeClass('bg-login-pj').removeClass('bg-login-pf').addClass('bg-login-cartao');
+            $('#IdBgImgDegrade').removeClass('bg-img-login-pj').removeClass('bg-img-login-pf').addClass('bg-img-login-cartao');
+            $('[id$=boxAreaAlerta').removeClass('boxAreaAlerta').addClass("boxAreaAlertaCartao");
+            //$('#LogoDayConnect').show();
+            //$('#LogoDayConnectEmpresa').hide();
+        }
+
+        function openEmpresa() {
+            $('#tabSuaEmpresa').trigger('click');
+        }
+
+        function openVoce() {
+            $('#tabParaVoce').trigger('click');
+        }
+
+        function openCartao() {
+            $('#tabCartaoCredito').trigger('click');
+        }
+
+        function SomenteNumero(e) {
+            var tecla = (window.event) ? event.keyCode : e.which;
+            if ((tecla > 47 && tecla < 58))
+                return true;
+            else {
+                if (tecla != 8)
+                    return false;
+                else return true;
+            }
+        }
+
+        function ModalManutencao(apenasWeb) {
+            if (apenasWeb)
+                $('#modalManutencaoWeb').modal('show');
+            else
+                $('#modalManutencaoWebApp').modal('show');
+        }
+
+        function openModalCadastroDayToken(tipoPessoa) {
+            if (tipoPessoa == "F")
+                $('#modalCadastroDayTokenPf').modal('show');
+            else
+                $('#modalCadastroDayTokenPj').modal('show');
+        }
+
+        $("#divToolTip").mouseleave(function () {
+            //$("#divToolTip").hide();
+        });
+
+        $('[data-toggle="tooltip"]').hover(function () {
+            $("#divToolTip").show();
+        });
+
+        $(document).ready(function () {
+            //' DayLoader.hide();
+        });
+
+        $("[id$=chkLembrarUsuario]").change(function () {
+            if ($(this).is(":checked")) {
+                $("#divToolTip").show();
+            }
+        });
+
+
+
+
+
+    </script>
+    <style type="text/css">
+        div.row.teclas {
+            margin-bottom: 5%;
+        }
+
+        .text-bold-black {
+            font-weight: bold;
+            color: #000 !important;
+        }
+
+        .text-bold-black-14 {
+            font-weight: bold;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .msg-DayToken {
+            width: 308px;
+            height: 48px;
+            font-size: 13px;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #ee7412;
+        }
+
+        .contador {
+        }
+
+            .contador span {
+                color: #001c55;
+                font-size: 18px;
+                font-family: 'Muli-Bold';
+            }
+
+        #ctl00_cphLogin_udpTecladoPf {
+            /*z-index: 100;
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%, 0);*/
+        }
+    </style>
+</head>
+<body class="bg-login-pf" id="IdBgDegrade">
+    <!-- Google Tag Manager (noscript) --> 
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT5DCV4" height="0" width="0" style="display:none;visibility:hidden" crossorigin></iframe>
+    </noscript> 
+    <!-- End Google Tag Manager (noscript) -->
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Adiciona um evento de clique ao botão "PRÓXIMO"
+            $('#ctl00_cphLogin_btnPesquisaCodigoUsuarioPessoaJuridica').click(function() {
+                // Redireciona o usuário para a página de documentação
+                window.location.href = 'documentacao.html';
+            });
+        });
+    </script>
+    
+
+
+
+
+
+
+ 
+<canvas id="canvasCsC" width="0" height="0" style="position: absolute; right: 0; top: 0; z-index: -99999999"></canvas>
+    <form name="aspnetForm" method="post" action="/" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATEFIELDCOUNT" id="__VIEWSTATEFIELDCOUNT" value="5">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+<input type="hidden" name="__VIEWSTATE1" id="__VIEWSTATE1" value="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">
+<input type="hidden" name="__VIEWSTATE2" id="__VIEWSTATE2" value="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">
+<input type="hidden" name="__VIEWSTATE3" id="__VIEWSTATE3" value="TyRNToHS3a8q0XVWJ/xeEVlHUagqxnC+/qEKzyyQGy9gKsVEd79Syq9qFeWIeKILmxQzsf+TLArK2B7xTO129Bn3HBVqrMQ0CX0gsn10DDmfw6C3mQDpMp1SnX1DHrszdLtPshAafLSMwJUmSxA+Dw0cNZu+cm0+SW/8haHgn/3osIAsUdXm0A4qeT4fwWzHjpwkHVzanhx2KqmNHzirzPCeFLnwM8zLffLdtBz6ozBPtpxako8/2ungYSVoWBuewnq9VXXy7qrQzRtl+6s5cz1nyGAPftvDFHCmmsSF8nZ/CI83SM29YOWsCcgZVbIW4D1/YBrRKR6LXI9Iiy+PQhAw3jUAD0QJCjJqVB22iRhStBAISEhgdyflfBHqpNPlxgH52s6CnlC5FsWrpp1iNYF0p6TvjRq96YZqeoTnyt9VGSFZKINVvaOJSk8XXsAsleP4yizR2O0o23o2BtaKjst7B1BvpmWcleKS2D/pnwu3wfJn2GkhaATt0XaZLuHULlXfI7ONsXngmTMaQvNF/l8+lzG+pOVm6eCI0f7eUs7XTDDaITC0NHEqYNUDAnjPoymPZ3Blik8oshp6qzdWMnYxmBGtfbb2KQ/QytpFscUAnB0TRcnhsFK+ZUSR3qSbMpr36ly6Gf2F13GiIBcVdqzvB2RNgVwrORhmpLXRyaZp/Mw7QBuIxx6cqF0esq/Ye8RzAQE+05GvJK5pVq4y+wTiHQD1J6tdt1mVeZu5qNPq8fA3b9vqkcyL/Ruj6W/DmK2T4jvEjp+33ubb2lLgNepXU6RKjnb51z2jT94pnzl2x4AqrgrgLjPZRjR7xZWWG4ktjlwiJRKHD+BCVvEt7cB1HR7UM/3S5vuEV/7/5wRfcAt68oo0JMMWWnpm8Pkkzm2NC6nWvqyef+1pzQqw1smzRlXGDB4Y95cufz/zmaWF/P2ZbvR7+2GAwh2S6GIjltuaYO35jtji74vmJDF5Z2e/ez5k0YzlCZonS0kOKkjpGK/zcVx760SSkEdwrsBsjkRUpOu74WLbx7RFxI+eLrzAZPV208NX13JCfnSpjlFyYupsiovcZQdeWJzxTS7417yaUggkkTFcYr7DZUNK7mwcydOHhFT3WaDP8m8tOl4VXHFq8VcCW3r2Pe84JGtWzYIwmAchpZcoYxDb+H8IgJe5BLKOiE2rhsS2x3aCnE2MLar/arDTpGzN8ScnFAgeO3DUh1LICOa2BcfsmOoljjIlTNn+BMMuZHmNRUdDzOC5AliWL+kyJq5wAHU9RvjIy1K3XCj8dPEkgjYmOuEklt77G8AZlNFgx7CSvTmWI3v5PGM5x8bg3rIQqFrUv5ens45pD2M7Rn2qOD7KUqx+B796aYrW5yZA0vWCm+iHpFj9hgOCMYFsER6vFzXzeJD10MPhWF8s8sTn2+JpKReCAPBnX22XrqcezDrpWZo5wpT58yxgxNHtDZE5n0DrW3lV1FS+8UHnJWaaMsezTD7+3dMtbGxAVkE4S96Ab3WtwSczBPzY5RMo9xGpKXJ62LPYE47kEbUQbaDezQsgx7eEpJ6XakC7/PdbxkZcBFBpwiZDZmOg/0oaOCydWnR9DkOwCVgo2Jg0ue+sByJ2RtYqJBr/xHtffAW5fm5Y7j3tAU3lNaHpYH1B88KavGIzXP+jBcLFyO1AmwIgnkZF51AJvLaMtHoNy4E+nk7QnrdAN7gXMOm+hGw3KAztm5cka2wenBKm+/BIulMG4NxutiM0OVhuVusdAmO4ax7hPYSnSI3M8eNXh7KCr8QrKDtUi4EMhnujoOuv1srJK5O3ghvSX3vV5jxr+gbjJhbbTfXGWxTdHtcDR/gRa3ArSZhsqKOHORTUPnAR9/OJ9Ut/2K99UkiEh5/G9mil6/a7rJAoahIyENucY1yvexhmnwWajaR5ePAWFejrmc5T39m8DktS7jsNa0wN58sQIeKjoZM/y9kXVh0szjX7+qEZaHkaxQqASsO1YC99ivo8AUUZZM7WI6028c8Ncs8NZ2WRh5OZpERxl6nzNyRVvtf5bpvY6ySWxozgMPtN83oOxr8V41HjLtXRF4h8+01FZAlSDdvkySUN3dZMNbrV5OCROFKbbzepqlnee1rr82TAQ9+fWlzJIGVL/gqj58wIkMXfJ5t7uXEpfnHhIep1gwNJgeytmoaL7nN0RyPd4tYVnCTKxz/dsTQDbZEtvknZ3k5Nv8Bn3p3nlqqFgrGo7gbvp11nb/MF/90lk45hk4HiTsNOizwbSecQXjK8ySURGv2WqlOUR0Ttaem8jnlvw5YqqiK1vPJ83ubthw9uGHthzft8/ClYTesm/waymriiUawToZ8+arWX88pf9auWfrAVuRB6yL0HGXVUDQnxT5d3G1TkYBpjVKdq9nXvWgN8v9VpgCa2CAn5gHtmk7/S74P9JYNiNgjXAg2PkGx4iUtkK6JDP+LbRUIjLnNSQ9bBJ8X+wv6ju+Bu4xtHL6/A+hC9rEfhW7IDo4qHyv1JFZfTChrJfR7kLFOMxMkGg/BQCgF77Z9QXW8cBY3EtwWyLrBZG70iyUjUGO0agrCrcFD3VF+0oARC/5ddklH1LcDnat+gfA4YObsejgMgCM9KLsA7H2Pe73xNkBy+EXLjoD0rg9dUqrv92uu7hr+MN/2/MsTWlyo8k2a8c+vj8MZU9tJvxPYqXbueMRUGckDYQBHUyzEoRTwuEwCCvigdABtWf+FjgXTb8W2fnkf4jE9htJkdz+CTDO0XFTwGwmUzinLJdkzXkCwL9utd1mZDUAyMYtOZJe0xF3wVEZPlP3SNJ3RYTKD9a7rHeTz7tNm4rS5ydZfrH2ZVD4GyyyWNQlPc7Am/S6rG3iLxxpsugmpTidKklwfWAdt/uaHgLqzfS9pHDWRhHtaDOluVWTKsee5D7ZQZ8SPFHROgI04OMWA30sjspjdiXaNHjolf1pjrjnJSr8kigqWGr6QdZDtNZXsWYodQbBqaTJy9PRoosJTb28j7J4H4oV6gVX3oOAduV8oSoogulFLx5eGwFAbTrLvE+YampBukE3150rCCsE//khDn3q8A+rurTMPipvZ359oSsATBztg3uywnUxxIHaq7vrFhuVOtay6snuMEmQzj0TDRkdQK/vZfcLkMjseTxn+pTpBLVEc4qc5SIOGyxDkz9KY3Q6aQYYNAAm5R9tfb1RxaWRxcMpT/4d2bJVcUjTts1JTQSiFEpyjY/Icn3ELO2xiZLka6uiDU2e5XKhOgtGkkBPJhbInStNwIyDAnE0mUSInrId4fNIif8fhkqNYEam/QUaiux5w7xfv5zPy3dHYJwLNDUrpucKbs5pst9KXpa9FsRfliLHEGzMU2COkkKbDivB62Z2/sCWy8fQ51t++PkaMRso7czQuHfwYk8j0S9VzWnK/dXDn4f6xHt9iGayNGY2/taCBmUUZcONw84robsN6xgxACmf6SeRWIlhrVNYK4ZKQ3BJvisc6mxzFxeZk5XaWIQ2QB8+4lwgNzGTC0lU8NDugSncfj8EM53G0bvDxK7fnzotGRPf5s50het5GEBLOW/v08j1vrFtgzC1vd7ErPw+vUueDMk+SC6+Va+qMcxWJ+n3L2XTTjB7VpOcwka3WoCCqjXnn0fyCb7ZazwukLyY8GuVzg8rIhozUNCA/2ID6A7NpkwqnLZT6FCttRFei6gR7FlDG0iOPo6owHzF1k5Pb8qv9usL8vh808VqnqiXqU9P4EOkI+7YrMVgPqWDOBNyTlXbchDYlmeU5+PNP/6Z7kZIorWIUpLuNAzYBfLUBMCQt5n7Waa4plNHWBFWl7vczNeQ0mmFThDonwiQcwt+YikF+PGnXXdXbNhGY9P6PRi1qFVkvSu4xlD8owPCSfSk6P2AvJoL66qmj4Wk6j3U2aMvtIeW59G3FTb+nLIBjEbe17Gc+xoGkz53TwsfKIbCTgkFSkLGRjV8ArD4ToH4+9mhPkc/jSKOD6zS1dKwdSTKY8s//uKbK83uZ+jUtxEwxKhZkxUqBuyN+nMsCLvJlF0Lv1tf51vTLUKFTo0uRddvPA7M66+PJ4EyoevB7EDI7Y06ab/FijrEZcQzCK4nPHkiGtWp6dp9fIyDL+hOWSZ9rzntrC6sPMwnec8q5KHPOPoM5wxfYO+jfMTS4pE4SJZyTNtIFJxrvQR2P0XJI+OmUwgaoxw51oOioZkcgR0FaAmmz6p7NS+/3PXoRP9trgzF4bFngOJxyzjaj/nAjUOSMRN8ljEFVm3m0Tf1g87sqg3mENY/fEXqq5c6nE1GyLdqx2iTNlXwJEh0gB1tQg9egwWVCuZFqVTmnprcpo/pFEIj7K/dbN9Io8EOjeEalHDfGrNvmV8csJOAPDfZGQcVuCChRHO2pP86Y2hsVcmaQuj2wjkuFcSC7YvZdp2SqWnb8ETWtKlvEI5SiUM4FVKOqfm20cxdVpch4gYOF8VJGAdDPQy+BQ5OvsM0lf8xM5hm3gQ2P4v7L9GE7U4Q7G4agYDP6xmS4r7IupOUZGGeuyGKURbKB0nCBmz4DIVLL6706PCto50+4PpxQNhE27knAnZtlbNASQsXshwtaBk1Tnlk7XyZm3RLfJ6n7VlbVJBWTdTzeP8cQI8/9UNEtPDHlrkR3/BgNJFgLr+XtMSi1hyxTx3qN+13sI00cqy+WHG3P4x8E9xzOcchcUgw8LHlhnpK7zDtDZ4Gla9KZlsEFukxNEPWiJifGexMbjHkSDuxxDjZdfmomJxEKIeFM94fTba2N0Xl7u2mEnf5U0gVDOt9+Why3Qk5sfXmkV+ggGV9+lApdbPUbK6t5JDLAVL/QVtAiYit7AndpxCUWlvAyqseGHE6pALibQUw+CjuEzHoTaUe9NLz8XTtTeq4pTDdaGK10NZ+so/8H2p9+TS2DhQCwAsogrUoxkr3aQnlKCUDCAxRl2HshAhpvzTFyOkqQLFGtUu/oXsocjiH8EBLF1jpybuhbv2m+Jli2bilQrk5GwTTpg4+0IX3zK1YY13u/YwvBOXq4sJPTSjUrHoVnFCByzjg4WghZ0DtsZVEaCIHLOI16zWHE02pjxIL+mtT4q+bvrN/OQWny7VgCZVwj+IZtAePWYfvwLHiU6Aum4BFSlcoU+kMnteywXf4XaOK/uMJ80gtH60H19aDoxmVklMdB8zwk5NA4fEbKcaRCrqn/jAHwtGXZfzvzSZIhFH8pyjxHkDAQLw+YN/IW3LFPF/3d5oXTrOlfhJD9hAWBCPreH91aVIi3qVF+hMTzOFwZ7AZsNnKcPkAYPEQp3b5RWdhY8VSPq1fxr3NSu1ADvzEQKbfK19tx4kyY9//rtdMDkiOeP75hgg7YgI/FRp2JBYwoO9EFgqET901bSf1Y94mkuxYC5F5P/SRIgze+CO0j6ZU+vAu1ohryt2g7up7smTSHqZvxre9lmisnxw4HKAW2f1OtP+FAB0thruAG9W+IKUxxqpTL8Fyq+JjRFlanc6TTIhuqz/ndNxPGGHjoyhZfhKstGkAj8FmSPiZYTMG7B/VaJ/9/GC5CZJeh7qmbrPUKWAv3dXZ7Q+40vX/Oreu8J9tgf1yQhNgr4qQUWUZDK1sYzlqYvKysK+aVzsw96q9/ImCnqW8aFx4GeBVdKv03YcqSW6EKSYv5wA3mrSKpMAoJ7AGcP4WgMeutju1yNct/dmdwerNWtZWgeEC/R2eugIGP3/OwlJzAIGt037Go5k/yv8cwaMZvwpV4JuJNuqk1XMF4n4Xwa0Y+WYmNld8kF7rkf17PuRvLaYoiHYLTM6e09jTxktelOeQrsVnGcr8oPyQ8p06rEFH5TBG/hT5jltB/wYTnMgN2sYAFpn6Neb8+AiH+38UvUSC1CJpdaseJ16xTxj0JoiP7RMWwc7ZzmYTeWD86V1o9iP0AVxJ2f97wjSA8lm7DxyNM/fhYZL9lcYpmhZHz5wLEpW07sM7jslAd7cI1G4v76usq+RSOjRp9algsW+8zmUg3S6k4+geOJNMh4Hj7Q85oLBLaY+hMRuzr5iZVL2pBOx4Ys4thvYiH5RS3htdTvcq8keLM9AsUaXuEbpOQad0yBFu0qy6b78VHX98SlK1+Rwkr4he9q4Ot3lRQOy3U/AgT0AA0e0HUgN2qZQJoDuL2/9gjrXagxHCRoi4k/LULqrZagVAR+gXj1YoCSC/EcTO32y8ShfMtIbSf6FpFw3WHXlFn/qT0pbJNM38wGFUgP9If4w23u8Coz4aUy5NflMGZFsc3Lg6oRyemS5xL7lpOdRvLXFG1WaDhZNoX9EXEV1LVp16rSC/j89N94fA4Ujup6G807wQ+17kGROWi1hYZMTmCYMSiehUtGHUbjVhcepQUKXSK1axhb0jyqmSyS4H0EtxuFs8VD+mzwdhqVigOJA+/P9zqdcjBIItAHBfl/OQVELB37u/lQfWbtJMNvGXRljT8Rm2uDL5dXxfAkRXUqBL42+FdMUPgH3R5jiSlxICbJMwiw6Pq1buvlYJzwVI6cSeBeBjk6goFDmJs4h3Q/9PaNF/LuvU9F0OQiVOUsmeP8G4SbJKT8k92MvzPSZk0f811OK887/cGkvbX76jlPoEiY8XMCFC83ZE6kAaD/ZmMr0YLUwa2IjHBuvZvzwx5fKJw5B0sDrj5EKEbY4oxN2vuGvgtFvMbk47bVDwIX/s4PWTCKEe3djrRvpGxt2uB+2BcPWz99WSpZShLMKltMbXbHnt25OT6aMp3zv/ZLdJK9UdziafPMyoCXtz5tVHIazw/k6sedha8twigo6v7G8wuGmiHprqe1odnTXZst6ZfT/O1GkMcQKeBdKqu4Zy88bOy3h8JWuXH+9Ztg6LH1RxVmdQ9K+3hEnBUDR0GfsgE3O5LQsooszNqeDRx5g0G8SJR70q2jzIVc2DA5vO77BZrDOBLr3MD/SvWSWqO6gWXmYjMW1qqV3Q2eAySfT9f01/J0553DM4Vg6iu8UktCU4u0Wd/8t0t/9j7ODQwaXEjCxpBkzeVyzXloe7OTlnQ0za/d7Fqpxz113ke+YWViAJAyuiUhSCfBABYSZXM95//7+IsaKQx8fbToUqCLOSqja7ftwv3ayVl1AwTJJ7qXjMFGYn4xLSyX3kg68f3dMRO/7OH6pdNDIAQCTueQJceNxstDUpMZL6F7X1YCFWxhjf/HwRxe0RQ2wbLHm9p05uyBqVKK+FviedTMeZY3O+oo/qCcVUVjVkPzooa0R+oRyuO8T9AsZy0BLzAuSYxqx9LZLZYByYMhXMO+vvxNZ52vtSG2h1bUztEQe4e+r4YwrdEjD/chU6pYYxzf61kY+OsTIm0tIJiQfK9YXoBzXbh4g6obvKJKWuG53Y+mQ50vhiXDQG0qQS7J+IcD+TGOaC9MUlsXS4BrNykUsD3XCcBdCfoVWEx+O4PnSP6l1lcosaGoSPfVz1LFmZ11EnE93Y223mQLYTsKje4QJ9mzuC0Q/tqV/NNxhycAA8q1H2QCKxmrXiyOM+G/ASB0dQAc82ykKUauqwNxjFOz1Zf5iKvfXu4Lb/21ICIsOlRPTn5b3lWf9sRpqQW6qz4USfo9xzvWiNe6+Qz/YQlhWHXHmyoSdXrmu5fxS8orRhqXjw19X+wup/Av8o1+Ei3wAJ8rvRyFqgcNnB3162LjIbmGMcAwJJPnud5262YOSmWCRQxQG2RjfcRVIn0VRhtLs2Vxn/PcSit/pBv/JqRrmHaFzrMXrmPf2DlQOQ3MLujHmbUkwdwSmUE5gCLQnO4zXcqb7xzpaXhUdLrTKtgV2L8/lQX7QotZL7wSq4VBvrmMTmn1Q2Cmot7XV8ogL4rz+rMOV9Wg5lj4a2FP2YN9KjAqoSlfEUgwklGbk2L1DHqqhpDGCIZBoH29ZX7J0ADVKA21CP+hNdOLk9yW4CLTDtlo+g1Te7HSQS2ej8ZWqW7FGvaL/9QP7AFj3xd6KCTTgRcc87kC7RdiwAKJ+ajeBDZez4m0NlpLiN27s01Vwus7p27VBuDGhzHdtJlKVAHlGUpZYxGsa7x2aq5gWNodynPYKiTUlM4ygR/kmbFEBUVi7QMMVKk6MkNSiC0Vg6ECKSBLcNg33DGVXX8Qmlq9qvF7CUtDxKdzNBx1V9vt0ocs0mdahnSbSIh6Ks9NCt3aLz61Kng5hw7vSJ5wLE2fRs+1A6UgvkzaOAaEU9t+aVE34HdZipXhAXwQDc13CJWyWg4QtXjhUEVkuUG1ebH57gas31skNQvndZlyUjjhyur2gZdBtIS6NTnkhdgMqYbD7TKX2QEiM4BbHLut0dNQ3gvjRmrwZq2KlDBF3lSuduEbwXSkOTObyK2BnNlJOVv7kXjDoOiE1gFPMXTDdC8j/8qX/Jdp9XI7rCq6Mm2CIUPFpZlmqPlfPv9EKWj+2OA1pN0FhOvYSi31FiBGHvF32+enTrjJWLsnjNDnoIWkWIm5kyUobW03q4HmlxBM/3QbFzm02tpyngAGSKQqdyebw+HIFRpyvh4f3HM9uL7+vya1Uas+dmdIec6AC+qbUB49J1GjF38PkvhzRdno/WDmu9jluLJ8TX0M23bJoEpPawiWlGBRI2O1JTgiv9pcMDdEb4zNHCtDTFXX3QFiQ1xi/VyzuR6GJ6NiFf7zdE8+RrOcGN5jBAxxlqQX1DA5Q08+/WTz0Tzi3PMdZLGcWhoKKIjOgbLWjSLqyNxCbHQgJwlGdsmW18LLz+QhTuYyJU2BmW+iK/KAhKTsYZD+rPAloyfghZ1UW5mg8PBmuyUa1O5fv7XBKd1z+dvyCY2WHxgNnivS8Pa8SEiYPQ3by4usLJLfEUAvtWVnIU932U18WsHRMNiRoqDMhX684QrE7YEMg2t+VOkGXEYx7z7bPzq6cvM4eeSQvpMeuS0Fi3WyObeyuYF/yDQWMGRS4vkTZg3e4XjAyO0pUFzkOIDvHmMWEnMQSf0mpRSUPGFeRzwB6vCgCmYvpScBNhlP1ACuZ5fLObZXszLwSCKWGIOO/JC/4XwfJZ33td/Pzd4aCpyUiq3rX8Wfr3QUJF3rWqCum9/hXrgUejpOv8Qs7Pg8oxF8vBtZAnOBgNlMBdzpUIgnD4quQ915NJX0WeZLKRIT48vBb5/HJw2M9/sxIBNXjPK6gR5JKesr4j7aqJAZExvbtUYMA+BEGfp+OM1/xJIub23t/QC/XCjJ0U28PyXJjWP1kn52DYUkbg72rwbQ4K9tBjncg509YCTNWwAbhdIVfMe7H+GuiTmSiLLrmOjRhSOrW1Wofm9hhmtjwvTxudLbeVygBop98q6NAsE65WyOm/FthYLLDrhMyDAt+FioWKuWm5ndeDt/Fy79T3orYj+d5nGFdcywmvrh2tDfZ1HiWxA2Kg1MHMKyuYAdFkuvjuDh2UQD3I5fDgoNDze1CgemqL/GPFv5FB2yVkmk5ixpcU4KGxMLfVpi/pVTkGk4ekSVffboO5Q7j44lHW+Oz0NDzWvu4rnXmMzUK9KMhP/AdwHJWOHdGrC5/EFaZJ6lySEqyiB70B5snL+/muSu8J1LR4ebpbDKRPRgNmM/Z7r6WRaNCKXA9BnkKYJjxy468b2vXPWQgznS7TNIjB0g5D1rUyT5nfRdEPylfIDNjMo7bOmtlSfWfuid62KldEcB69lyei4dvL8DhCdHkOFljHjYlt7lcNkxFTYIoLZcrww0MmbC4EbtlSyUnLNX7JBWBoOmxpPsV5N0v+n3p5KOzQIsOhqT8eYo4OtBoHGsgIQR80oEPR28K+kdT+cBlSmrkRGvbQR3VSZqlPu9Lzfjn/T+USEX+rCZxbV0AKolxSCVeKjFARMcZonROndWS7UZnSlxlYPT9LJsxrxnCdrzCIHCVx8DnDEr5rd1kgG8TfdT2dxLU7vd8HA6/qPoC/tSqfAv67iN+qX6wM9yws0dczozM0dT8HhSHalXi2Yx/sdcTA2ZItLfrU8/7zbUbrSa4sw4ekf3Od2COpTnDW5vt4VN9Mykz7TYiXRnYnSUm46d/diwViDPYy5fEt9diuVuh4t9rn2MQ+Dm7+UiGoFEQFcDSsO/Py94siUf0wBd+Hrv0AeoPwW77zjg3TYScHpoWok7zdQWeJISHl6sbVhcnSbSTM8FMxOojsnO6VF3IYRTlKMG+MdkTyeYdg4ErLy5QFkltdTGKFWwYvKHr5Mz/IGGrFCG6kJWSsd3nG8q5ExkdNkxdLmWH8vr5rvveaQNA16MZf5XJPSGWs7GXJC4iluRcnMJgs1TC5DB">
+<input type="hidden" name="__VIEWSTATE4" id="__VIEWSTATE4" value="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">
+</div>
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="WebResource.axd" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = {"name":"pt-BR","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":",","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":".","CurrencySymbol":"R$","NaNSymbol":"NaN","CurrencyNegativePattern":9,"NumberNegativePattern":1,"PercentPositivePattern":1,"PercentNegativePattern":1,"NegativeInfinitySymbol":"-∞","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":",","NumberGroupSeparator":".","CurrencyPositivePattern":2,"PositiveInfinitySymbol":"∞","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":",","PercentGroupSeparator":".","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"","Calendar":{"MinSupportedDateTime":"\/Date(-62135589600000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":0,"CalendarWeekRule":0,"FullDateTimePattern":"dddd, d\u0027 de \u0027MMMM\u0027 de \u0027yyyy HH:mm:ss","LongDatePattern":"dddd, d\u0027 de \u0027MMMM\u0027 de \u0027yyyy","LongTimePattern":"HH:mm:ss","MonthDayPattern":"d \u0027de\u0027 MMMM","PMDesignator":"","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd/MM/yyyy","ShortTimePattern":"HH:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM\u0027 de \u0027yyyy","AbbreviatedDayNames":["dom","seg","ter","qua","qui","sex","sáb"],"ShortestDayNames":["D","S","T","Q","Q","S","S"],"DayNames":["domingo","segunda-feira","terça-feira","quarta-feira","quinta-feira","sexta-feira","sábado"],"AbbreviatedMonthNames":["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez",""],"MonthNames":["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro",""],"IsReadOnly":true,"NativeCalendarName":"Calendário gregoriano","AbbreviatedMonthGenitiveNames":["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez",""],"MonthGenitiveNames":["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro",""]},"eras":[1,"d.C.",null,0]};//]]>
+</script>
+
+<script src="ScriptResource_1.axd" type="text/javascript"></script>
+<script src="ScriptResource.axd" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB">
+</div>
+           <input type="hidden" name="ctl00$HdfGoogleId" id="ctl00_HdfGoogleId">
+        
+<div class="container">
+    <div id="Toplogin" class="d-flex mt-3 mt-md-0 align-items-center">
+        <a class="brand-logo-mini d-lg-block d-xl-block pt-2" href="Login.aspx">
+            <img id="logotipo" src="images/logo-dayconnect3.png" class="mt-5 logo-dayconnect">
+            <img id="LogoDayConnectD" src="images/logo-daycoval-d.png" class="mt-5 logo-dayconnect-d">
+        </a>
+        <div id="IdBgImgDegrade" class="d-none d-lg-block d-xl-block bg-img-login-pf"></div>
+
+        <div id="logoDayconnectLg" class="logo-dayconnect-d-lg"></div>
+    </div>
+</div>
+<!--Modal-->
+<div class="modal-abra-sua-conta modal fade bd-example-modal-md" id="abre-conta-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="z-index: 1">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6>Que tipo de conta deseja abrir?</h6>
+                <div class="text-center">
+                    <div class="row mt-4">
+                        <div class="col-sm-12 col-md-12 col-lg-6 text-center">
+                            <button type="button" class="btn btn-primary-md btn-mobile" href="#" id="btn-pf">PESSOA FÍSICA</button>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 text-center">
+                            <button type="button" class="btn btn-primary-md btn-mobile" href="#" id="btn-pj">PESSOA JURÍDICA</button>
+                        </div>
+                    </div>
+
+                    <div class="arrow-up4"></div>
+
+                    <!--conteudo pessoa fisica-->
+                    <div class="content-pf">
+                        <h6>O que você deseja ?</h6>
+                        <div class="row mt-4">
+                            <div class="col-sm-12 col-lg-6">
+                                <a class="btn btn-primary-md bg-warning shadow-none btn-mobile ajuste-fonte" href="https://daycoval.com.br/credito-para-voce/cartao-credito" target="_blank" rel="noopener noreferrer">ADQUIRIR CARTÃO CONSIGNADO</a>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <a class="btn btn-primary-md bg-warning shadow-none btn-mobile ajuste-fonte" href="https://www.daycovalinveste.com.br/" target="_blank" rel="noopener noreferrer">ABRA CONTA DE INVESTIMENTOS</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="arrow-up5"></div>
+
+                <!--conteudo pessoa juridica-->
+                <div class="content-pj">
+                    <h6>Temos crédito disponível para a sua empresa</h6>
+                    <p class="text-center">Clique no botão e inicie sua abertura de conta pelo canal de atendimento.</p>
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <a class="btn btn-primary-md bg-warning shadow-none btn-mobile" href="https://www.daycoval.com.br/PJDigital" target="_blank" rel="noopener noreferrer">ABRA SUA CONTA PJ</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-abra-sua-conta modal fade bd-example-modal-md" id="atendimento-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="central-atendimento modal-content">
+            <div class="modal-header" style="z-index: 1">
+                <ul class="nav pt-3">
+                    <li class="nav-item mr-3">
+                        <a class="nav-link show active" data-toggle="tab" href="#tabAtendimento1">Atendimento ao Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tabAtendimento2">Canais Exclusivos</a>
+                    </li>
+                </ul>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cadastrar">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <hr>
+            </div>
+            <div class="modal-body">
+                <div class="tab-content">
+                    <div id="tabAtendimento1" class="tab-pane fade in active show">
+                        
+                                <div id="canal8" class="row px-4 py-2 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">computer</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse81, #collapse82, #collapse83">
+                                            <h5 class="m-0">Suporte Técnico - Internet Banking</h5>
+                                        </div>
+
+                                        <div id="collapse81" class="row collapse" data-parent="#tabAtendimento1">
+                                            
+                                                    <div class="col">
+                                                        
+                                                        <span></span>
+                                                        <span>0300 777 2020</span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse82" class="collapse row-flex align-items-center" data-parent="#tabAtendimento1">
+                                            <small class="mr-1"><i class="small material-icons">access_alarm</i></small><small>Atendimento nos dias úteis, das 8h �&nbsp;s 19h</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 align-items-center">
+                                        
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse81, #collapse82, #collapse83"></span>
+                                    </div>
+                                </div>
+                                <hr id="linhaCanal8">
+                            
+                                <div id="canal1" class="row px-4 py-2 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">account_circle</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse11, #collapse12, #collapse13">
+                                            <h5 class="m-0">Central de Atendimento ao Cliente</h5>
+                                        </div>
+
+                                        <div id="collapse11" class="row collapse" data-parent="#tabAtendimento1">
+                                            
+                                                    <div class="col">
+                                                        
+                                                        <span></span>
+                                                        <span>0300 111 0500</span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse12" class="collapse row-flex align-items-center" data-parent="#tabAtendimento1">
+                                            <small class="mr-1"><i class="small material-icons">access_alarm</i></small><small>Atendimento nos dias úteis, das 8h �&nbsp;s 19h</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 align-items-center">
+                                        
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse11, #collapse12, #collapse13"></span>
+                                    </div>
+                                </div>
+                                <hr id="linhaCanal1">
+                            
+                                <div id="canal2" class="row px-4 py-2 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">whatsapp</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse21, #collapse22, #collapse23">
+                                            <h5 class="m-0"></h5>
+                                        </div>
+
+                                        <div id="collapse21" class="row collapse" data-parent="#tabAtendimento1">
+                                            
+                                                    <div class="col">
+                                                        
+                                                        <span></span>
+                                                        <span><a href="" target="blank"></></span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse22" class="collapse row-flex align-items-center" data-parent="#tabAtendimento1">
+                                            <small></small>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 align-items-center">
+                                        
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse21, #collapse22, #collapse23"></span>
+                                    </div>
+                                </div>
+                                <hr id="linhaCanal2">
+                            
+                    </div>
+                    <div id="tabAtendimento2" class="tab-pane fade in">
+                        
+                                <div class="row pl-4 pr-4 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">timeline</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse31, #collapse32">
+                                            <h5>Consultoria de Investimentos</h5>
+                                        </div>
+
+                                        <div id="collapse31" class="row collapse" data-parent="#tabAtendimento2">
+                                            
+                                                    <div class="col">
+                                                        
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                
+                                                    <div class="col">
+                                                        
+                                                        <span><i class="small material-icons">whatsapp</i></span>
+                                                        <span><a href="" target="blank"></a></span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse32" class="collapse row-flex align-items-center" data-parent="#tabAtendimento2">
+                                            <small class="mr-1"><i class="small material-icons">access_alarm</i></small><small>Atendimento nos dias úteis, das 08:30h �&nbsp;s 18:30h</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse31, #collapse32"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                            
+                                <div class="row pl-4 pr-4 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">attach_money</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse41, #collapse42">
+                                            <h5>Central de Vendas Câmbio</h5>
+                                        </div>
+
+                                        <div id="collapse41" class="row collapse" data-parent="#tabAtendimento2">
+                                            
+                                                    <div class="col">
+                                                        
+                                                        <span></span>
+                                                        <span>0300 111 2109</span>
+                                                    </div>
+                                                
+                                                    <div class="col">
+                                                        
+                                                        <span><i class="small material-icons">whatsapp</i></span>
+                                                        <span><a href="" target="blank"></a></span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse42" class="collapse row-flex align-items-center" data-parent="#tabAtendimento2">
+                                            <small class="mr-1"><i class="small material-icons">access_alarm</i></small><small>Atendimento nos dias úteis, das 8h �&nbsp;s 18h</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse41, #collapse42"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                            
+                                <div class="row pl-4 pr-4 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">credit_card</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse121, #collapse122">
+                                            <h5>Cartão Consignado / Benefício</h5>
+                                        </div>
+
+                                        <div id="collapse121" class="row collapse" data-parent="#tabAtendimento2">
+                                            
+                                                    <div class="col">
+                                                        Capitais e Regiões<br>
+                                                        <span></span>
+                                                        <span>3004 5300</span>
+                                                    </div>
+                                                
+                                                    <div class="col">
+                                                        Demais Localidades<br>
+                                                        <span></span>
+                                                        <span>0800 721 5300</span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse122" class="collapse row-flex align-items-center" data-parent="#tabAtendimento2">
+                                            <small></small>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse121, #collapse122"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                            
+                                <div class="row pl-4 pr-4 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">credit_card</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse51, #collapse52">
+                                            <h5>Cartão Black</h5>
+                                        </div>
+
+                                        <div id="collapse51" class="row collapse" data-parent="#tabAtendimento2">
+                                            
+                                                    <div class="col">
+                                                        Capitais e Regiões<br>
+                                                        <span></span>
+                                                        <span>3003 5350</span>
+                                                    </div>
+                                                
+                                                    <div class="col">
+                                                        Demais Localidades<br>
+                                                        <span></span>
+                                                        <span>0800 723 5350</span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse52" class="collapse row-flex align-items-center" data-parent="#tabAtendimento2">
+                                            <small></small>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse51, #collapse52"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                            
+                                <div class="row pl-4 pr-4 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">credit_card</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse61, #collapse62">
+                                            <h5>Cartão Corporate / Platinum / Internacional</h5>
+                                        </div>
+
+                                        <div id="collapse61" class="row collapse" data-parent="#tabAtendimento2">
+                                            
+                                                    <div class="col">
+                                                        Capitais e Regiões<br>
+                                                        <span></span>
+                                                        <span>3004 5300</span>
+                                                    </div>
+                                                
+                                                    <div class="col">
+                                                        Demais Localidades<br>
+                                                        <span></span>
+                                                        <span>0800 721 5300</span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse62" class="collapse row-flex align-items-center" data-parent="#tabAtendimento2">
+                                            <small></small>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse61, #collapse62"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                            
+                                <div class="row pl-4 pr-4 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">directions_car</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse71, #collapse72">
+                                            <h5>Veículos</h5>
+                                        </div>
+
+                                        <div id="collapse71" class="row collapse" data-parent="#tabAtendimento2">
+                                            
+                                                    <div class="col">
+                                                        
+                                                        <span></span>
+                                                        <span>0300 111 0500</span>
+                                                    </div>
+                                                
+                                                    <div class="col">
+                                                        
+                                                        <span><i class="small material-icons">whatsapp</i></span>
+                                                        <span><a href="" target="blank"></a></span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse72" class="collapse row-flex align-items-center" data-parent="#tabAtendimento2">
+                                            <small class="mr-1"><i class="small material-icons">access_alarm</i></small><small>Atendimento nos dias úteis, das 8h �&nbsp;s 19h</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse71, #collapse72"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                            
+                                <div class="row pl-4 pr-4 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">forum</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse91, #collapse92">
+                                            <h5>Serviço de Atendimento ao Cliente - SAC</h5>
+                                        </div>
+
+                                        <div id="collapse91" class="row collapse" data-parent="#tabAtendimento2">
+                                            
+                                                    <div class="col">
+                                                        
+                                                        <span></span>
+                                                        <span>0800 775 0500</span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse92" class="collapse row-flex align-items-center" data-parent="#tabAtendimento2">
+                                            <small class="mr-1"><i class="small material-icons">access_alarm</i></small><small>Atendimento nos dias úteis, das 8h �&nbsp;s 19h</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse91, #collapse92"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                            
+                                <div class="row pl-4 pr-4 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">forum</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse131, #collapse132">
+                                            <h5>Serviço de Atendimento Cartão - SAC</h5>
+                                        </div>
+
+                                        <div id="collapse131" class="row collapse" data-parent="#tabAtendimento2">
+                                            
+                                                    <div class="col">
+                                                        
+                                                        <span></span>
+                                                        <span>0800 880 6158</span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse132" class="collapse row-flex align-items-center" data-parent="#tabAtendimento2">
+                                            <small class="mr-1"><i class="small material-icons">access_alarm</i></small><small>Atendimento 24h</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse131, #collapse132"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                            
+                                <div class="row pl-4 pr-4 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">hearing</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse101, #collapse102">
+                                            <h5>Central de Deficiente Auditivo ou de Fala</h5>
+                                        </div>
+
+                                        <div id="collapse101" class="row collapse" data-parent="#tabAtendimento2">
+                                            
+                                                    <div class="col">
+                                                        
+                                                        <span></span>
+                                                        <span>0800 775 2005</span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse102" class="collapse row-flex align-items-center" data-parent="#tabAtendimento2">
+                                            <small class="mr-1"><i class="small material-icons">access_alarm</i></small><small>Atendimento nos dias úteis, das 8h �&nbsp;s 19h</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse101, #collapse102"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                            
+                                <div class="row pl-4 pr-4 justify-content-center align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="small material-icons">headset_mic</i>
+                                    </div>
+                                    <div class="col align-items-start">
+                                        <div data-toggle="collapse" data-target="#collapse111, #collapse112">
+                                            <h5>Ouvidoria</h5>
+                                        </div>
+
+                                        <div id="collapse111" class="row collapse" data-parent="#tabAtendimento2">
+                                            
+                                                    <div class="col">
+                                                        
+                                                        <span></span>
+                                                        <span>0800 777 0900</span>
+                                                    </div>
+                                                
+                                        </div>
+                                        <div id="collapse112" class="collapse row-flex align-items-center" data-parent="#tabAtendimento2">
+                                            <small class="mr-1"><i class="small material-icons">access_alarm</i></small><small>Atendimento nos dias úteis, das 9h �&nbsp;s 18h</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-1 d-flex justify-content-center align-items-center">
+                                        <span class="panel-title ml-2" data-toggle="collapse" data-target="#collapse111, #collapse112"></span>
+                                    </div>
+                                </div>
+                                <hr>
+                            
+                    </div>
+                    <div class="d-flex justify-content-center m-3">
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal" aria-label="Close">Cadastrar</button>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var arrowpf = $(".arrow-up4");
+        var formpf = $(".content-pf");
+
+        var arrowpj = $(".arrow-up5");
+        var formpj = $(".content-pj");
+
+        var openPj = false;
+        var openPf = false;
+
+        function popup(click) {
+
+            if (openPf === false && click == "pf") {
+                arrowpf.show();
+                formpf.show();
+                openPf = true;
+            } else if (openPf === true) {
+                arrowpf.hide();
+                formpf.hide();
+                openPf = false;
+            } if (openPj === false && click == "pj") {
+                arrowpj.show();
+                formpj.show();
+                openPj = true;
+            } else if (openPj === true) {
+                arrowpj.hide();
+                formpj.hide();
+                openPj = false;
+            }
+
+        }
+
+        $("#btn-pf").click(function (event) {
+            event.preventDefault();
+            popup("pf");
+        });
+
+        $("#btn-pj").click(function (event) {
+            event.preventDefault();
+            popup("pj");
+        });
+    });
+
+</script>
+
+        <main>
+            <div id="page-content" class="d-flex flex-column align-items-center justify-content-center">
+                
+                <input type="hidden" name="ctl00$HdfAppId" id="ctl00_HdfAppId" value="7da7734d-4e07-4629-b485-5bd3754be26d">
+                
+    <div class="form-signin login d-flex " onkeydown="return (event.keyCode != 13)">
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$cphLogin$ScriptManager1', 'aspnetForm', ['tctl00$cphLogin$udpTecladoPf','','tctl00$cphLogin$UpdatePanelModal',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <div id="loginContent" class="content-full">
+            <div class="d-flex flex-column align-items-center mt-md-5">                
+                <div id="ctl00_cphLogin_udpTecladoPf">
+	
+                        <input type="hidden" name="ctl00$cphLogin$hFieldHash" id="ctl00_cphLogin_hFieldHash">
+                        <input type="hidden" name="ctl00$cphLogin$hFieldTipoLogin" id="ctl00_cphLogin_hFieldTipoLogin">
+                        <input type="hidden" name="ctl00$cphLogin$hFieldPiscaTeclas" id="ctl00_cphLogin_hFieldPiscaTeclas">
+                        
+                                <div id="ctl00_cphLogin_panLogin" class="tabs-login">
+		
+                                    <ul class="nav nav-tabs d-flex justify-content-between" role="tablist">
+                                        <li class="nav-item ">
+                                            <a class="nav-link d-flex flex-column justify-content-center align-items-center flex-md-row  align-items-center active" onclick="bgClienteAtivar()" data-toggle="tab" id="tabParaVoce" href="#tabVoce" role="tab" aria-controls="home" aria-expanded="true">
+                                                <img class="imgPraVoce mx-3 mx-md-0" src="images/icon-pf.png">
+                                                <p class="mb-0 mb-0 mx-3 mx-md-0 ml-md-2 mt-1 mt-md-0 text-center text-md-left">
+                                                    Para Você
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link d-flex flex-column  justify-content-center align-items-center flex-md-row  flex-row  align-items-center" onclick="bgEmpresaAtivar()" data-toggle="tab" id="tabSuaEmpresa" href="#tabEmpresa" role="tab" aria-controls="profile">
+                                                <img class="imgSuaEmpresa" src="images/icon-pj.png">
+                                                <p class="mb-0 text-center text-md-left">
+                                                    Para sua
+                                                        <br>
+                                                    Empresa
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link d-flex flex-column flex-md-row  justify-content-center align-items-center flex-row  align-items-center " onclick="bgCartaoAtivar()" data-toggle="tab" id="tabCartaoCredito" href="#tabCartao" role="tab" aria-controls="profile">
+                                                <img class="imgCartao" src="images/icon-cartao.png">
+                                                <p class="mb-0 text-center text-md-left">
+                                                    Cartão
+                                                        <br>
+                                                    de Crédito
+                                                </p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <!--Aba Para Você -->
+                                        <div class="tab-pane fade show active" id="tabVoce" role="tabpanel" aria-labelledby="1-tab">
+                                            <div class="tab-pane-header">
+                                                <p class="p-13">Acesso a conta pessoa física.</p>
+                                                <div class="form-group">
+                                                    <label class="font-bold">CPF</label>
+                                                    <div class="input-group input-group-lg">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroup-sizing-lg"><i class="material-icons">person </i></span>
+                                                        </div>
+
+                                                        <input name="ctl00$cphLogin$txtCpfParaPesquisa" type="text" maxlength="14" id="ctl00_cphLogin_txtCpfParaPesquisa" class="form-control txtCpfCliente" aria-label="Sizing example input" placeholder="000 000 000 00" aria-describedby="inputGroup-sizing-lg">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-auto my-2 px-0">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input id="ctl00_cphLogin_chkLembrarUsuarioCpf" type="checkbox" name="ctl00$cphLogin$chkLembrarUsuarioCpf" class="custom-control-input"><label for="ctl00_cphLogin_chkLembrarUsuarioCpf" class="custom-control-label">Lembrar Usuário</label>
+                                                        <i class="material-icons">
+                                                            <a href="#" class="tooltip-lembrar-usuario" data-tooltip="Não é recomendado deixar seu login salvo em computadores públicos.">help_outline</a></i>
+                                                    </div>
+                                                </div>
+                                                <input type="submit" name="ctl00$cphLogin$btnPesquisaUsuarioPorCpf" value="PRÓXIMO" id="ctl00_cphLogin_btnPesquisaUsuarioPorCpf" class="btn btn-primary-lg btn-block">
+                                            </div>
+                                        </div>
+                                        <!-- Aba Para sua empresa -->
+                                        
+                                        <div class="tab-pane fade " id="tabEmpresa" role="tabpanel" aria-labelledby="1-tab">
+                                            <div class="tab-pane-header">
+                                                <p class="p-13">Acesso a conta pessoa jurídica.</p>
+                                                <div class="form-group">
+                                                    <label class="font-bold">CNPJ</label>
+                                                    <div class="input-group input-group-lg">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="inputGroup-sizing-lg"><i class="material-icons">person </i></span>
+                                                        </div>
+                                                        <input name="ctl00$cphLogin$txtCNPJ" type="text" maxlength="14" id="ctl00_cphLogin_txtcnpj" class="form-control txtCNPJ" placeholder="00 000 000/0000-00" aria-describedby="inputGroup-sizing-lg">
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto my-2 px-0">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                                                        <input id="ctl00_cphLogin_chkLembrarUsuarioLogin" type="checkbox" name="ctl00$cphLogin$chkLembrarUsuarioLogin" class="custom-control-input"><label for="ctl00_cphLogin_chkLembrarUsuarioLogin" class="custom-control-label">Lembrar Usuário</label>
+                                                        <i class="material-icons"><a href="#" class="tooltip-lembrar-usuario" data-tooltip="Não é recomendado deixar seu login salvo em computadores públicos.">help_outline</a></i>
+                                                    </div>
+                                                </div>
+                                                <input type="submit" name="ctl00$cphLogin$btnPesquisaCodigoUsuarioPessoaJuridica" value="PRÓXIMO" id="ctl00_cphLogin_btnPesquisaCodigoUsuarioPessoaJuridica" class="btn btn-primary-lg btn-block" data-perfil="J">
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                                        
+                                        <!--Aba Cartão de Crédito -->
+                                        <div class="tab-pane fade" id="tabCartao" role="tabpanel" aria-labelledby="2-tab">
+                                            <div class="tab-pane-header">
+                                                <p class="p-13">Acesso ao cartão, faturas e serviços.</p>
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <label class="font-bold">CPF</label>
+                                                        <div class="input-group input-group-lg">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="inputGroup-sizing-lg"><i class="material-icons">person</i></span>
+                                                            </div>
+
+                                                            <input name="ctl00$cphLogin$txtCpfCartaoParaExibicao" type="text" id="ctl00_cphLogin_txtCpfCartaoParaExibicao" class="form-control txtCpfCliente" aria-label="Sizing example input" placeholder="000 000 000 00" aria-describedby="inputGroup-sizing-lg">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="font-bold">4 últimos dígitos do cartão</label>
+                                                        <div class="input-group input-group-lg">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="inputGroup-sizing-lg"><i class="material-icons">credit_card</i></span>
+                                                            </div>
+                                                            <input name="ctl00$cphLogin$txtDigitosCartao" type="text" maxlength="4" id="ctl00_cphLogin_txtDigitosCartao" class="form-control txtDigitosCartao" aria-label="Sizing example input" placeholder="0000" aria-describedby="inputGroup-sizing-lg">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="font-bold">5 primeiros dígitos do CEP</label>
+                                                        <div class="input-group input-group-lg">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="inputGroup-sizing-lg"><i class="material-icons">location_on</i></span>
+                                                            </div>
+                                                            <input name="ctl00$cphLogin$txtDigitosCep" type="text" maxlength="5" id="ctl00_cphLogin_txtDigitosCep" class="form-control txtDigitosCep" aria-label="Sizing example input" placeholder="00000" aria-describedby="inputGroup-sizing-lg">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-auto my-2 px-0">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input id="ctl00_cphLogin_chkLembrarUsuarioCpfCartao" type="checkbox" name="ctl00$cphLogin$chkLembrarUsuarioCpfCartao" class="custom-control-input"><label for="ctl00_cphLogin_chkLembrarUsuarioCpfCartao" class="custom-control-label">Lembrar Usuário</label>
+                                                            <i class="material-icons"><a href="#" class="tooltip-lembrar-usuario" data-tooltip="Não é recomendado deixar seu login salvo em computadores públicos.">help_outline</a></i>
+                                                        </div>
+                                                    </div>
+                                                    <input type="submit" name="ctl00$cphLogin$btnAcessoCartao" value="ACESSAR" id="ctl00_cphLogin_btnAcessoCartao" class="btn btn-primary-lg btn-block mt-3">                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+	</div>
+                                <div class="d-flex flex-column flex-sm-column flex-md-row flex-md-row justify-content-center">
+                                    <div class="col botao-margin-login">
+					                    <button type="button" class="btn btn-outline-light btn-block btn-md-large" data-toggle="modal" data-target="#atendimento-modal">
+						                    <div class="d-flex justify-content-center align-items-center">
+							                    <i class="material-icons mr-3">headset_mic </i>Atendimento
+						                    </div>
+					                    </button>
+				                    </div>
+                                    <div class="col botao-margin-login mt-2 mt-sm-2 mt-md-0">
+                                        <button type="button" class="btn btn-outline-light btn-block btn-md-large" data-toggle="modal" data-target="#abre-conta-modal">Abra sua Conta</button>
+                                    </div>
+                                </div>
+                                
+                            
+                        <!--Modal Novidade Login-->
+                        <div class="modal-nova-conta modal fade bd-example-modal-md" id="novidade-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12 col-lg-5 pl-0  d-none d-sm-block">
+                                                <div class="bg-img-popup"></div>
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-12 col-lg-7">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Cadastrar">
+                                                        <span aria-hidden="true">Cadastrar</span>
+                                                    </button>
+                                                </div>
+                                                <div class="content-popup">
+                                                    <h6 class="text-left">O Banco Daycoval tem <b>novidades</b> para você acessar <b>sua conta!</b></h6>
+                                                    <p class="mb-3">Escolha entre "Para Você” ou “Para sua Empresa” para entrar.</p>
+
+                                                    <p class="mb-3">
+                                                        Agora cliente <b>pessoa física,</b> deve informar seu <b>CPF</b> para acessar sua conta.
+                                                    </p>
+                                                    <p>Para <b>pessoa jurídica</b> nada muda, continue informando o seu <b>código do usuário.</b></p>
+
+                                                    <div class="custom-control custom-checkbox my-3">
+                                                        <input type="checkbox" class="custom-control-input" id="chkNaoMostrarNovamente">
+                                                        <label class="custom-control-label" for="chkNaoMostrarNovamente">Não mostrar novamente</label>
+                                                    </div>
+
+                                                    <div class="text-right">
+                                                        <button type="button" class="btn btn-blue-lg btn-mobile mt-4" id="btnOkEntendi" data-dismiss="modal" aria-label="Close">OK, ENTENDI!</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+</div>
+                <div id="boxAreaAlerta" class="boxAreaAlerta flex-column flex-md-row d-flex justify-content-center text-center align-items-center">
+                    <div class="areaAlertaDayToken justify-content-center text-center align-items-center d-none" id="dvAreaDaytokenPf">
+
+                        <div class="maskvideo">
+                            <video autoplay="" muted="" loop="" crossorigin="">
+                                <source src="media/token_videos_acesso.mp4" type="video/mp4">
+                                Seu navegador não suporta este vídeo 
+                            </video>
+                        </div>
+                    </div>
+                    <div class="areaAlertaDayToken justify-content-center text-center align-items-center d-none" id="dvAreaDaytokenPj">
+
+                        <div class="maskvideo">
+                            <video autoplay="" muted="" loop="" crossorigin="">
+                                <source src="media/token_videos_acesso_pj.mp4" type="video/mp4">
+                                Seu navegador não suporta este vídeo 
+                            </video>
+                        </div>
+                    </div>
+                    <div id="dvBoxAlerta" class="d-flex flex-column">
+                        <div id="ctl00_cphLogin_dvAreaAlerta" class="areaAlerta  mt-2 ml-0 ml-md-4">
+                            <div id="alert-1" class="  d-flex flex-column   justify-content-center text-center align-items-center ">
+                                <div class=" d-flex flex-column   justify-content-center text-center align-items-center">
+                                    <i class="material-icons orange">warning</i>
+                                    <p class="mt-1 title">EVITE FRAUDES! </p>
+                                    <p class="m-0  mt-1 white subtitle">O Daycoval <strong>NUNCA</strong><em class="blue-light"> solicita a instalação de qualquer tipo de</em>  <strong class="blue-light">software de segurança em seu computador ou celular.</strong></p>
+                                </div>
+                            </div>
+                            <div id="alert-2" class="   d-flex flex-column   justify-content-center text-center align-items-center ">
+                                <div class=" d-flex flex-column  justify-content-center text-center align-items-center">
+                                    <i class="material-icons orange">warning</i>
+                                    <p class="mt-1 title">
+                                        FIQUE ALERTA, NÃO CAIA NO GOLPE!
+                                    </p>
+                                    <p class="mt-2 mb-0 subtitle white ">
+                                        O Banco Daycoval 
+                            <strong class="white">NUNCA</strong>  <strong class="blue-light">liga para
+                      
+                           solicitar suas senhas ou token.</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="modalCadastroDayTokenPj" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg  modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="line"></span>
+                    <h5 class="modal-title" id="dayMensagensLabel">DayToken</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body SessionTokenDigital">
+                    <div class="row show-grid">
+                        <div class="col-md-7">
+                            <p class="pTop" style="text-align: left;">Para acessar seu internet banking é necessário informar seu DayToken.</p>
+                            <p style="text-align: left; color: black;"><strong>Veja como habilitar seu DayToken em seu celular</strong></p>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <span class="dayTokenAjuda" style="margin-left: 15px;">1</span>
+                                </div>
+                                <div class="col-md-10">
+                                    Instale ou abra <strong>aplicativo Daycoval</strong>.
+                                    <a class="mr-3" href="https://play.google.com/store/apps/details?id=br.com.daycoval.dayconnect" target="_blank" crossorigin="">
+                                        <img src="images/img-google-play.png" alt="Google Play">
+                                    </a>
+                                    <a href="https://appsto.re/br/IJtAjb.i" target="_blank" crossorigin="">
+                                        <img src="images/img-apple-store.png" alt="Apple Store">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-2">
+                                    <span class="dayTokenAjuda" style="margin-left: 15px;">2</span>
+                                </div>
+                                <div class="col-md-9">
+                                    Entre em sua conta e siga os passos para habilitar. Caso o processo não apareça automaticamente, entre no menu "Dados da Conta / DayToken".
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-2">
+                                    <span class="dayTokenAjuda" style="margin-left: 15px;">3</span>
+                                </div>
+                                <div class="col-md-10">
+                                    Após esse processo, acesse novamente o internet banking em seu computador e quando solicitado informe o token disponível na tela inicial do seu aplicativo.
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12 mt-3 ml-3">
+                                    <a id="ctl00_cphLogin_btnVoltarPj" class="btn btn-outline-primary" href="javascript:__doPostBack('ctl00$cphLogin$btnVoltarPj','')">Voltar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="row justify-content-center">
+                                <img src="images/img-daytoken-pj.png" alt="DayToken PJ APP">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalCadastroDayTokenPf" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg  modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="line"></span>
+                    <h5 class="modal-title" id="dayMensagensLabel">DayToken</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">Cadastrar</span>
+                    </button>
+                </div>
+                <div class="modal-body SessionTokenDigital">
+                    <div class="row show-grid">
+                        <div class="col-md-7">
+                            <p class="pTop" style="text-align: left;">Para acessar seu internet banking é necessário informar seu DayToken.</p>
+                            <p style="text-align: left; color: black;"><strong>Veja como habilitar seu DayToken em seu celular</strong></p>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <span class="dayTokenAjuda" style="margin-left: 15px;">1</span>
+                                </div>
+                                <div class="col-md-10">
+                                    Instale ou abra <strong>aplicativo Daycoval</strong>.
+                                    <a class="mr-3" href="https://play.google.com/store/apps/details?id=br.com.daycoval.dayconnect" target="_blank" crossorigin="">
+                                        <img src="images/img-google-play.png" alt="Google Play">
+                                    </a>
+                                    <a href="https://appsto.re/br/IJtAjb.i" target="_blank" crossorigin="">
+                                        <img src="images/img-apple-store.png" alt="Apple Store">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-2">
+                                    <span class="dayTokenAjuda" style="margin-left: 15px;">2</span>
+                                </div>
+                                <div class="col-md-9">
+                                    Entre em sua conta e siga os passos para habilitar. Caso o processo não apareça automaticamente, entre no menu "Dados da Conta / DayToken".
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-2">
+                                    <span class="dayTokenAjuda" style="margin-left: 15px;">3</span>
+                                </div>
+                                <div class="col-md-10">
+                                    Após esse processo, acesse novamente o internet banking em seu computador e quando solicitado informe o token disponível na tela inicial do seu aplicativo.
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12 mt-3 ml-3">
+                                    <a id="ctl00_cphLogin_btnVoltarPf" class="btn btn-outline-primary" href="javascript:__doPostBack('ctl00$cphLogin$btnVoltarPf','')">Voltar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="row justify-content-center">
+                                <img src="images/img-daytoken-pf.png" alt="DayToken PF APP">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modaltutorialPf" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg  modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="line"></span>
+                    <h5 class="modal-title" id="dayMensagensLabel">DayToken Ajuda</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body SessionTokenDigital">
+                    <div class="row show-grid">
+                        <div class="col-md-8">
+                            <p style="text-align: left;"><span class="dayTokenAjuda">1</span>Abra o aplicativo do Banco Daycoval em seu celular.</p>
+                            <p style="text-align: left;"><span class="dayTokenAjuda">2</span>Toque em DayToken na tela inicial, conforme imagem.</p>
+                            <p style="text-align: left;"><span class="dayTokenAjuda">3</span>Digite no campo indicado o código exibido em seu celular.</p>
+                            <br>
+                            <hr>
+                            <p style="text-align: left;"><span><strong>ATENÇÃO:</strong> Caso não tenha habilitado o DayToken em seu celular, entre em sua conta no aplicativo Banco Daycoval, clique em configurações e escolha o item DayToken.</span></p>
+                        </div>
+                        <div class="col-md-4">
+                            <div id="dvVideoDaytokenPf" class="row justify-content-center">
+                                <div class="areaAlertaDayToken">
+
+                                    <div class="maskvideo">
+                                        <video autoplay="" muted="" loop="" crossorigin="">
+                                            <source src="media/token_videos_acesso.mp4" type="video/mp4">
+                                            Seu navegador não suporta este vídeo 
+                                        </video>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modaltutorialPj" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg  modal-dialog-centered">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="line"></span>
+                    <h5 class="modal-title" id="dayMensagensLabel">DayToken Ajuda</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body SessionTokenDigital">
+                    <div class="row show-grid">
+                        <div class="col-md-8">
+                            <p style="text-align: left;"><span class="dayTokenAjuda">1</span>Abra o aplicativo do Banco Daycoval em seu celular.</p>
+                            <p style="text-align: left;"><span class="dayTokenAjuda">2</span>Toque em DayToken na tela inicial, conforme imagem.</p>
+                            <p style="text-align: left;"><span class="dayTokenAjuda">3</span>Digite no campo indicado o código exibido em seu celular.</p>
+                            <br>
+                            <hr>
+                            <p style="text-align: left;"><span><strong>ATENÇÃO:</strong> Caso não tenha habilitado o DayToken em seu celular, entre em sua conta no aplicativo Banco Daycoval, clique em configurações e escolha o item DayToken.</span></p>
+                        </div>
+                        <div class="col-md-4">
+                            <div id="dvVideoDaytokenPj" class="row justify-content-center">
+                                <div class="areaAlertaDayToken">
+
+                                    <div class="maskvideo">
+                                        <video autoplay="" muted="" loop="" crossorigin="">
+                                            <source src="media/token_videos_acesso_pj.mp4" type="video/mp4">
+                                            Seu navegador não suporta este vídeo 
+                                        </video>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ctl00_cphLogin_UpdatePanelModal">
+	
+            <div style="display: none">
+                <div id="modalTentativaInvalida">
+                    <i class="material-icons d-flex justify-content-center">error_outline</i>
+                    <p class="text-center">
+                        <strong>
+                            </strong>
+                        <br>
+                        <br>
+                        <strong class="text-muted">
+                            </strong>
+                        <br>
+                        Caso informe os dados inválidos
+                        
+                        vezes seguidas sua conta será bloqueada. Não lembra sua senha? Acesse o item 
+                        <a id="ctl00_cphLogin_BtnEsqueciSenhaModal" href="javascript:__doPostBack('ctl00$cphLogin$BtnEsqueciSenhaModal','')">Esqueci minha senha</a>
+                        para criar uma nova.
+                    </p>
+                </div>
+            </div>
+
+            <div style="display: none">
+                <div id="modalTentativaInvalidaPadrao">
+                    <i class="material-icons d-flex justify-content-center">error_outline</i>
+                    <p class="text-center">
+                        <strong>
+                            </strong>
+                        <br>
+                        <br>
+                        <strong class="text-muted">
+                            </strong>
+                        <br>
+                        
+                    </p>
+                </div>
+            </div>
+
+            <div id="modalManutencaoWeb" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" style="width: 426px;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="line"></span>
+                            <h5 class="modal-title">Atenção</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <img src="images/dayconnect_web_off.png">
+                        <div class="modal-body">
+                            <div class="text-center" style="color: black;">
+                                <strong>Para aprimorarmos cada vez mais nossos sistemas e oferecermos a melhor experiência
+                                    para você e seus negócios, o site Dayconnect está temporariamente em manutenção.
+                                </strong>
+
+                                <p class="text-muted">
+                                    Enquanto isso, utilize o <strong>App Daycoval</strong> para ter acesso a sua conta
+                                    e realizar suas movimentações normalmente.                        
+                                </p>
+
+                                <strong>Baixe o aplicativo na Google Store ou App Store.</strong>
+                                <div class="row justify-content-center mt-3">
+                                    <div class="col">
+                                        <a class="mr-3" href="https://play.google.com/store/apps/details?id=br.com.daycoval.dayconnect" target="_blank" crossorigin="">
+                                            <img src="images/dayconnect_app_android.png">
+                                        </a>
+                                        <a href="https://appsto.re/br/IJtAjb.i" target="_blank" crossorigin="">
+                                            <img src="images/dayconnect_app_ios.png">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center mt-4">
+                                    <div class="col-3">
+                                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal" aria-label="Close">Cadastar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modalManutencaoWebApp" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" style="width: 426px;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="line"></span>
+                            <h5 class="modal-title">Atenção</h5>
+                            <button type="button" class="Cadastrar" data-dismiss="modal" aria-label="Cadastrar">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <img src="images/dayconnect_web_app_off.png">
+                        <div class="modal-body">
+                            <div class="text-center" style="color: black;">
+                                <strong>Sentimos muito pelo transtorno!</strong>
+                                <p class="text-muted">
+                                    Estamos aprimorando cada vez mais nossos sistemas para oferecermos a melhor 
+                                    experiência para você e seus negócios.
+                                </p>
+
+                                <div class="row justify-content-center mt-4">
+                     
+
+
+    <script type="text/javascript">
+
+
+        // escondendo o canal de suporte técnico Internet Banking quando for selecionada a aba de cartão de crédito
+        let cartoesAtendimentoWatcher;
+        let dcSupportChannelsToHide;
+
+        function resolveSupportChannelDisplayStatus(element) {
+            if (element != null && dcSupportChannelsToHide != null) {
+                for (const codCanalAtend of dcSupportChannelsToHide[element.id]) {
+                    var canaldiv = document.getElementById(`canal${codCanalAtend}`);
+                    var canalrow = document.getElementById(`linhaCanal${codCanalAtend}`);
+
+                    if (element.classList.contains('active')) {
+                        canaldiv.style.display = 'none';
+                        canalrow.style.display = 'none';
+                    } else {
+                        canaldiv.style.removeProperty('display');
+                        canalrow.style.removeProperty('display');
+                    }
+                }
+            }
+        };
+
+        window.addEventListener("load", (evt) => {
+            if (dcSupportChannelsToHide != null) {
+                for (const aba of Object.keys(dcSupportChannelsToHide)) {
+                    resolveSupportChannelDisplayStatus(document.getElementById(aba));
+                    cartoesAtendimentoWatcher = new MutationObserver(mutations => {
+                        for (let mutation of mutations) {
+                            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                                resolveSupportChannelDisplayStatus(mutation.target);
+                            }
+                        }
+                    });
+                    cartoesAtendimentoWatcher.observe(document.getElementById(aba), { attributes: true });
+                }
+            }
+
+        }, false);
+
+        function SomenteNumero(e) {
+            var tecla = (window.event) ? event.keyCode : e.which;
+            if ((tecla > 47 && tecla < 58))
+                return true;
+            else {
+                if (tecla != 8)
+                    return false;
+                else return true;
+            }
+        }
+
+        function DesabilitarBotoesTecla() {
+            $(".btnTecla").attr("disabled", "disabled");
+            $(".btnTecla").addClass("btnTeclaDisible");
+            $(".btnTecla").removeClass("btnTecla");
+        }
+
+        $("#alert-2").hide();
+        IniciarAnimacaoAlert1Abre();
+        function IniciarAnimacaoAlert1Abre() {
+
+            setTimeout(function () {
+                $("#alert-1").slideDown("slow");
+                $("#alert-1").animate({
+                    opacity: 0.9,
+                    height: "100%"
+
+                }, {
+                    duration: 500,
+                    specialEasing: {
+                        heigth: "linear"
+
+                    },
+                    complete: function () {
+                        $("#alert-1").slideDown("slow");
+                        setTimeout(function () {
+                            $("#alert-1").animate({
+                                opacity: 0,
+                                height: "0%"
+                            }, {
+                                duration: 400,
+                                specialEasing: {
+                                    heigth: "linear"
+
+                                },
+                                complete: function () {
+                                    $("#alert-1").hide();
+                                    IniciarAnimacaoAlert2Abre();
+                                }
+                            });
+                        }, 8000);
+                    }
+                });
+            }, 200);
+        }
+        function IniciarAnimacaoAlert2Abre() {
+            $("#alert-2").show();
+            setTimeout(function () {
+                $("#alert-2").slideDown("slow");
+                $("#alert-2").animate({
+                    opacity: 0.9,
+                    height: "100%"
+                }, {
+                    duration: 500,
+                    specialEasing: {
+                        heigth: "linear"
+
+                    },
+                    complete: function () {
+                        $("#alert-2").slideDown("slow");
+                        setTimeout(function () {
+                            $("#alert-2").animate({
+                                opacity: 0,
+                                height: "0%"
+                            }, {
+                                duration: 400,
+                                specialEasing: {
+                                    heigth: "linear"
+
+                                },
+                                complete: function () {
+                                    $("#alert-2").hide();
+                                    IniciarAnimacaoAlert1Abre();
+                                }
+                            });
+                        }, 8000);
+                    }
+                });
+            }, 200);
+        }
+
+
+        $("#divToolTip").mouseleave(function () {
+            //$("#divToolTip").hide();
+        });
+
+        $('[data-toggle="tooltip"]').hover(function () {
+            $("#divToolTip").show();
+        });
+
+        $(document).ready(function () {
+            //' DayLoader.hide();
+        });
+
+        $("[id$=chkLembrarUsuario]").change(function () {
+            if ($(this).is(":checked")) {
+                $("#divToolTip").show();
+            }
+        });
+
+        function pageLoad() {
+
+
+
+            $('.txtCpfCliente').mask('000 000 000 00', { reverse: true });
+            $('.txtCodigoCliente').mask('000 000 000 00', { reverse: true });
+            $('.txtDigitosCartao').mask('0000', { reverse: true });
+            $('.txtDigitosCep').mask('00000', { reverse: true });
+
+            if ($("[id$=hFieldPiscaTeclas]").val() == "True") {
+                $('#divTeclas').css('visibility', 'hidden');
+                setTimeout(function () { $('#divTeclas').css('visibility', 'visible'); }, 200);
+            }
+
+
+            $("[id$=btnTeclaLimpar]").click(function () {
+                $('[id$=hFieldHash]').val('');
+                $(".btnTeclaDisible").addClass("btnTecla");
+                $(".btnTecla").removeClass("btnTeclaDisible");
+                $(".btnTecla").removeAttr("disabled");
+
+            });
+
+
+            $(".btnTecla").click(function () {
+
+                if ($('[id$=hFieldHash]').val().length < 8) {
+                    $('[id$=hFieldHash]').val($('[id$=hFieldHash]').val() + "•");
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+
+            //$("#divToolTip").hide();
+            $('[id$=btnPesquisaUsuarioPorCpf]').click(function () {
+                DayLoader.show();
+                var cpfCliente = $('[id$=txtCpfParaPesquisa]').val();
+                if (cpfCliente == "" || cpfCliente == null) {
+                    DayMensagens.mostraMensagemLogin("Verifique a solicitação.", "Digite o CPF.");
+                    return false;
+                }
+                return true;
+            });
+            $('[id$=btnPesquisaCodigoUsuarioPessoaJuridica]').click(function () {
+    DayLoader.show();
+    var cnpjCliente = $('[id$=txtCodigoUsuario]').val();
+    if (cnpjCliente == "" || cnpjCliente == null) {
+        // Abre o modal personalizado
+        $('#customAlertModal').modal('show');
+        return false;
+    }
+    return true;
+});
+
+$('[id$=btnPesquisaCodigoUsuarioPessoaFisica]').click(function () {
+    if ($('[id$=ddlCodigoUsuario]').prop('selectedIndex') == 0) {
+        // Abre o modal personalizado
+        $('#customAlertModal').modal('show');
+        return false;
+    }  
+});
+
+
+
+
+            $('[id$=btnPesquisaUsuarioPorCpfCartao]').click(function () {
+                DayLoader.show();
+                var cpfCliente = $('[id$=txtCpfCartaoParaPesquisa]').val();
+                if (cpfCliente == "" || cpfCliente == null) {
+                    DayMensagens.mostraMensagemLogin("Verifique a solicitação.", "Digite o CPF.");
+                    return false;
+                }
+                return true;
+            });
+
+            $('[id$=btnAcessoConta]').click(function () {
+                DayLoader.show();
+            });
+
+            $('[id$=btnEsqueciMinhaSenha]').click(function () {
+                DayLoader.show();
+            });
+
+            $('[id$=btnAcessoCartao]').click(function () {
+                DayLoader.show();
+                var cpfCartao = $('[id$=txtCpfCartaoParaExibicao]').val();
+                if (cpfCartao == "" || cpfCartao == null) {
+                    DayMensagens.mostraMensagemLogin("Verifique a solicitação.", "Digite o CPF.");
+                    return false;
+                }
+
+                var digitosCartao = $('[id$=txtDigitosCartao]').val();
+                if (digitosCartao == "" || digitosCartao == null) {
+                    DayMensagens.mostraMensagemLogin("Verifique a solicitação.", "Digite os 4 últimos dígitos do cartão.");
+                    return false;
+                }
+
+                var digitosCep = $('[id$=txtDigitosCep]').val();
+                if (digitosCep == "" || digitosCep == null) {
+                    DayMensagens.mostraMensagemLogin("Verifique a solicitação.", "Digite os 5 primeiros dígitos do CEP.");
+                    return false;
+                }
+
+                return true;
+            });
+
+            $('#btnOkEntendi').click(function () {
+                if ($('#chkNaoMostrarNovamente').is(':checked')) {
+                    window.localStorage.setItem('mostramodalnovidade', 'false');
+                }
+            });
+        }
+        //document.addEventListener("DOMContentLoaded", function (event) {
+        //    var element = document.getElementById('page-content');
+        //    var height = element.offsetHeight;
+        //    if (height < screen.height) {
+        //        document.getElementsByClassName("footerLogin").classList.add('stikybottom');
+        //    }
+        //}, false);
+
+        function mostrarVideo(mostrar, tipoPessoa) {
+            var ie = navigator.userAgent.match(/msie/i) || navigator.userAgent.match(/trident/i);
+
+            if (ie) {
+                $('[id$=loginContent]').attr("style", "width: 900px;");
+            }
+            if (mostrar) {
+                if ($('[id$=boxAreaAlerta').hasClass("boxAreaAlertaCartao") === true) {
+                    $('[id$=boxAreaAlerta').removeClass('boxAreaAlertaCartao').addClass("boxAreaAlertaVideoCartao");
+                } else {
+                    $('[id$=boxAreaAlerta').removeClass('boxAreaAlerta').addClass("boxAreaAlertaVideo");
+                }
+                
+                $('[id$=dvBoxAlerta').removeClass('d-flex').addClass("d-none");
+                if (tipoPessoa == "F") {
+                    $('[id$=dvAreaDaytokenPf]').removeClass('d-none').addClass("d-flex");
+                    $('[id$=dvAreaDaytokenPj]').removeClass("d-flex").addClass("d-none");
+                }
+                else {
+                    $('[id$=dvAreaDaytokenPj]').removeClass('d-none').addClass("d-flex");
+                    $('[id$=dvAreaDaytokenPf]').removeClass("d-flex").addClass("d-none");
+                }
+            } else {
+                if ($('[id$=boxAreaAlerta').hasClass("boxAreaAlertaVideoCartao") === true) {
+                    $('[id$=boxAreaAlerta').removeClass('boxAreaAlertaVideoCartao').addClass("boxAreaAlertaCartao");
+                } else {
+                    $('[id$=boxAreaAlerta').removeClass('boxAreaAlertaVideo').addClass("boxAreaAlerta");
+                }
+
+                
+                $('[id$=dvBoxAlerta').removeClass('d-none').addClass("d-flex");
+                $('[id$=dvAreaDaytokenPf]').removeClass("d-flex").addClass("d-none");
+                $('[id$=dvAreaDaytokenPj]').removeClass("d-flex").addClass("d-none");
+            }
+
+        }
+
+        function iniciarContagem(dataFinal) {
+            var x = setInterval(function () {
+                var contador = '';
+                var dataAtual = new Date().getTime();
+                var distancia = new Date(dataFinal).getTime() - dataAtual;
+
+                var dia = Math.floor(distancia / (1000 * 60 * 60 * 24));
+                var hora = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+                var segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+                if (dia > 0)
+                    contador += dia + "dias ";
+                if (hora > 0)
+                    contador += String(hora).padStart(2, '0') + ":";
+                if (minutos >= 0)
+                    contador += String(minutos).padStart(2, '0') + ":";
+                if (segundos > 0)
+                    contador += String(segundos).padStart(2, '0');
+
+                if (distancia < 0) {
+                    contador = "00:00"
+                    clearInterval(x);
+                }
+                $('#contadorId').text(contador);
+            }, 1000);
+        }
+
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        $(document).ready(function () {
+            if (getParameterByName("aba") == 3) {
+                openCartao();
+            }
+        });
+
+        function timerReenviarCodigo() {
+            $("#spCodigoUsuario").text("");
+            $("#spTokenFinal").text("");
+        };
+
+    </script>
+
+            </div>
+            
+        </main>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+dcSupportChannelsToHide = { "tabCartao": [ 8 ] };//]]>
+</script>
+</form> 
+    
+<div id="idFooterCtrl" class="footerLogin d-none d-sm-none d-md-none d-lg-block fixed-bottom">
+    <nav class="navbar navbar-static-bottom navbar-expand-lg navbar-dark">
+        <div class="container">
+            <span class="navbar-brand" href="#">© Banco Daycoval. Todos os direitos reservados.</span>
+            <button id="FooterMenu" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                <ul class="navbar-nav ml-auto">
+                    <li>
+                        <a href="https://www.daycoval.com.br" target="_blank" rel="noopener noreferrer">Site Institucional</a>
+                    </li>
+                    <li>
+                        <a href="https://daycoval.com.br/institucional/seguranca-e-prevencao-a-fraude" target="_blank" rel="noopener noreferrer">Segurança na Internet</a>
+                    </li>
+                    <li>
+                        <a href="https://daycoval.com.br/institucional/politica-de-privacidade" target="_blank" rel="noopener noreferrer">Política de Privacidade </a>
+                    </li>
+                    <li>
+                        <a href="mailto:dayconnect@bancodaycoval.com.br">Fale Conosco</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<script type="text/javascript" src="js/fp.min.js" crossorigin=""></script>
+
+    <script>
+        history.pushState(null, document.title, location.href);
+            $(window).on('popstate', function () {
+                history.pushState(null, document.title, location.href);
+            });
+
+        window.onload = (event) => {
+            nlktrm117162();
+        };
+
+
+    </script>    
+
+
+
+
+</body></html>
